@@ -1,0 +1,29 @@
+name: Daily invoice reconciliation
+
+on:
+  workflow_dispatch:
+  # Enable only after repository secrets are configured.
+  # schedule:
+  #   - cron: "0 3 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install .
+      - name: Restore Google service-account credentials
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+        run: printf '%s' "$GOOGLE_CREDENTIALS_JSON" > credentials.json
+      - name: Apply reconciliation plan
+        env:
+          INVOICE_OPS_SPREADSHEET_ID: ${{ secrets.INVOICE_OPS_SPREADSHEET_ID }}
+        run: invoice-ops --apply
