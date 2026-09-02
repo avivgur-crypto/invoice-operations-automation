@@ -1,0 +1,41 @@
+[
+  {
+    "external_id": "demo-1001",
+    "document_date": "2026-08-03",
+    "vendor": "Cloud Platform Ltd.",
+    "amount": "249.00",
+    "tax": "0.00",
+    "currency": "USD",
+    "category": "Infrastructure",
+    "business_unit": "Product",
+    "document_number": "INV-1001",
+    "document_type": "invoice",
+    "source_updated_at": "2026-08-03T09:30:00Z"
+  },
+  {
+    "external_id": "demo-1002",
+    "document_date": "2026-08-07",
+    "vendor": "Design Tools Inc.",
+    "amount": "79.90",
+    "tax": "13.58",
+    "currency": "EUR",
+    "category": "Software",
+    "business_unit": "Marketing",
+    "document_number": "INV-1002",
+    "document_type": "invoice",
+    "source_updated_at": "2026-08-07T11:15:00Z"
+  },
+  {
+    "external_id": "demo-1003",
+    "document_date": "2026-08-12",
+    "vendor": "Travel Services Co.",
+    "amount": "45.00",
+    "tax": "0.00",
+    "currency": "GBP",
+    "category": "Travel",
+    "business_unit": "Operations",
+    "document_number": "CR-1003",
+    "document_type": "credit_note",
+    "source_updated_at": "2026-08-12T16:45:00Z"
+  }
+]
