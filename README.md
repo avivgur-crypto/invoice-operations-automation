@@ -87,7 +87,7 @@ examples/             Synthetic invoice datasets
 ### Install
 
 ```bash
-git clone https://github.com/avivgur-crypto/invoice-operations-automation.git
+git clone https://github.com/avivgur/invoice-operations-automation.git
 cd invoice-operations-automation
 python -m venv .venv
 source .venv/bin/activate
