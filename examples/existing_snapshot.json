@@ -1,0 +1,37 @@
+[
+  {
+    "external_id": "demo-1001",
+    "document_date": "2026-08-03",
+    "vendor": "Cloud Platform Ltd.",
+    "amount": "249.00",
+    "tax": "0.00",
+    "currency": "USD",
+    "category": "Infrastructure",
+    "business_unit": "Product",
+    "document_number": "INV-1001",
+    "document_type": "invoice"
+  },
+  {
+    "external_id": "demo-1002",
+    "document_date": "2026-08-07",
+    "vendor": "Design Tools Inc.",
+    "amount": "30.00",
+    "tax": "13.58",
+    "currency": "EUR",
+    "category": "Software",
+    "business_unit": "Marketing",
+    "document_number": "INV-1002",
+    "document_type": "invoice"
+  },
+  {
+    "external_id": "demo-old",
+    "document_date": "2026-07-20",
+    "vendor": "Archived Example LLC",
+    "amount": "20.00",
+    "currency": "USD",
+    "category": "Office",
+    "business_unit": "Operations",
+    "document_number": "INV-OLD",
+    "document_type": "invoice"
+  }
+]
