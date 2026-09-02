@@ -1,9 +1,9 @@
 """Pure reconciliation logic: deterministic, testable, and auditable."""
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from decimal import Decimal
 from enum import StrEnum
-from typing import Iterable
 
 from invoice_ops.models import Invoice
 
