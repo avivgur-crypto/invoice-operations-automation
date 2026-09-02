@@ -3,8 +3,8 @@
 import argparse
 import json
 from collections import Counter
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Sequence
 
 from invoice_ops.config import Settings
 from invoice_ops.json_source import load_invoices
