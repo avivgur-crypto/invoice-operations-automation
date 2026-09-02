@@ -186,4 +186,4 @@ This repository contains synthetic records only. Credentials, refresh tokens, sp
 
 This project is intentionally framed as more than a data-transfer script. It demonstrates how an operational workflow can be translated into a deployable system with explicit controls, safe failure modes, auditability, and a clear boundary between automation and human approval.
 
-Built by [Aviv Gur](https://github.com/avivgur-crypto).
+Built by [Aviv Gur](https://github.com/avivgur).
