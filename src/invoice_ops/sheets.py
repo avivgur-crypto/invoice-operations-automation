@@ -33,7 +33,7 @@ class GoogleSheetsGateway:
 
     def __init__(self, settings: Settings) -> None:
         settings.require_google_configuration()
-        credentials = Credentials.from_service_account_file(
+        credentials = Credentials.from_service_account_file(  # type: ignore[no-untyped-call]
             str(settings.google_credentials_file),
             scopes=[
                 "https://www.googleapis.com/auth/spreadsheets",
@@ -48,9 +48,9 @@ class GoogleSheetsGateway:
 
     def _ensure_headers(self) -> None:
         if self.sheet.row_values(1) != HEADERS:
-            self.sheet.update("A1:N1", [HEADERS])
+            self.sheet.update([HEADERS], range_name="A1:N1")
         if self.archive.row_values(1) != HEADERS:
-            self.archive.update("A1:N1", [HEADERS])
+            self.archive.update([HEADERS], range_name="A1:N1")
 
     def read(self) -> list[Invoice]:
         values = self.sheet.get_all_records()
@@ -95,13 +95,13 @@ class GoogleSheetsGateway:
                 self.sheet.append_row(action.incoming.to_sheet_row())
             elif action.action is ActionType.UPDATE and action.incoming and row_number:
                 self.sheet.update(
-                    f"A{row_number}:N{row_number}",
                     [action.incoming.to_sheet_row()],
+                    range_name=f"A{row_number}:N{row_number}",
                 )
             elif action.action is ActionType.REVIEW and row_number:
                 self.sheet.update(
-                    f"M{row_number}:N{row_number}",
                     [["NEEDS_REVIEW", action.reason]],
+                    range_name=f"M{row_number}:N{row_number}",
                 )
             elif action.action is ActionType.ARCHIVE and action.existing and row_number:
                 self.archive.append_row(
