@@ -1,6 +1,6 @@
 """Domain models independent of any API or spreadsheet provider."""
 
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
 from decimal import Decimal
 from enum import StrEnum
 
@@ -47,7 +47,7 @@ class Invoice(BaseModel):
         return self.amount
 
     def to_sheet_row(self, status: str = "", review_reason: str = "") -> list[str]:
-        updated = self.source_updated_at or datetime.now(timezone.utc)
+        updated = self.source_updated_at or datetime.now(UTC)
         return [
             self.document_date.strftime("%B %Y"),
             self.document_date.isoformat(),
